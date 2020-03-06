@@ -10,8 +10,20 @@
 		// pop open a lightbox here and show some content
 		// start with a video
 		// debugger;
+		
+		// need to get the class name from the element so we can match the video source
+		let targetName = this.className.split(" ")[1]; // this will strip out the house name
+		let targetSource = targetName.charAt(0).toUpperCase() + targetName.slice(1);
+
+		let newVideoSource = `video/House-${targetSource}.mp4`;
+
+		// debugger;
+
 		lightBox.classList.add('show-lightbox');
 
+		gotVideo.src = newVideoSource;
+		
+		gotVideo.load();
 		gotVideo.play();
 	}
 
